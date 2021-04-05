@@ -28,7 +28,7 @@ function cleanDist(){
 
 function styles(){
 	return src([
-			// 'node_modules/normalize.css/normalize.css',
+			'node_modules/normalize.css/normalize.css',
 			// 'node_modules/slick-carousel/slick/slick.scss',
 			'app/scss/style.scss',
 		])
@@ -44,7 +44,7 @@ function styles(){
 
 function scripts(){
 	return src([
-		// 'node_modules/jquery/dist/jquery.min.js',
+		'node_modules/jquery/dist/jquery.min.js',
 		// 'node_modules/slick-carousel/slick/slick.min.js',
 		'app/js/main.js',
 	])  
