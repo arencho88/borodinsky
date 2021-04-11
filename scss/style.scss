@@ -2,29 +2,648 @@
 @import 'global';
 @import 'fonts';
 
+// header ----------------------------/
 
 
 
+// logo ------------------------------/
+.logo {
+	display: block;
+	padding: 27.5px 0;
+	&__img {
+		display: block;
+		width: 226px;
+		height: 30px;
+		margin: 0 auto;
+	}
+}
 
+// nav -------------------------------/
+.nav {
+	// max-width: 500px;
+	min-height: 50px;
+	margin: 0 auto;
 
+	position: relative;
 
+	background-color: #826550;
+	&__burger-btn {
+		position: absolute;
+		top: 0;
+		right: 0;
 
+		display: block;
+		width: 70px;
+		height: 50px;
+		padding: 0;
+		border: none;
 
+		background-color: #6a4d38;
+		cursor: pointer;
+		&:hover,
+		&:active {
+			background-color: #624530;
+		}
+	}
+	&__list {
+		@include reset-ul;
 
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 24px;
+		text-transform: uppercase;
+	}
+	&__link {
+		display: block;
+		padding: 12px 21px;
+		border-top: 1px solid #886e5b;
+		border-bottom: 1px solid #71543f;
+		
+		text-decoration: none;
+		color: #fff;		
 
+		background-color: #826550;
+	}
+	&__link[href] {	
+		&:hover{
+			border-bottom-color: transparent;
+			background-color: #755a46;
+		}
+		&:active{
+			color: rgba(255, 255, 255, 0.3);
+			border-top-color: transparent;
+			background-color: #6a4d38;
+		}
+	}
+}
+.nav--closed .nav__burger-btn {
+	&::before {
+		content: "";
 
+		position: absolute;
+		top: 15px;
+		left: 17px;
 
+		width: 36px;
+		height: 2px;
 
+		background-color: #ffffff;
+		box-shadow: 0 8px 0 0 #ffffff, 0 16px 0 0 #ffffff;
+	}
+	&:active::before {
+		background-color: rgba(255, 255, 255, 0.3);
+		box-shadow: 0 8px 0 0 rgba(255, 255, 255, 0.3), 0 16px 0 0 rgba(255, 255, 255, 0.3);
+	}
+}
+.nav--opened .nav__burger-btn {
+	top: 0;
+	right: auto;
+	left: 0;
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: 24px;
+		left: 18px;
+		width: 36px;
+		height: 2px;
+		background-color: #ffffff;
+	}
+	&::before {
+		transform: rotate(45deg);
+	}
+	&::after {
+		transform: rotate(-45deg);	
+	}
+	&:active::before,
+	&:active::after {
+		background-color: rgba(255, 255, 255, 0.3);
+	}
+ }
 
+// user-list -------------------------/
+.user-list {
+	@include reset-ul;
+	line-height: 24px;
 
+	background-color: #6a4d38;
+	&__link {
+		display: block;
+		padding: 13px 21px 13px 48px;
 
+		position: relative;
 
+		color: #fff;
+		text-decoration: none;
 
+		background-color: #6a4d38;
+	}
+	&__icon--login {
+		position: absolute;
 
+		width: 16px;
+		height: 16px;
 
+		top: 50%;
+		left: 21px;
+		transform: translateY(-50%);
 
+		opacity: 0.3;
+	}
+}
 
+// title -----------------------------/
+.title {
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 30px;
+	color: #000;
+	text-align: center;
+	text-transform: uppercase;
+}
 
+// statistics ------------------------/
+.statistics {
+	// max-width: 500px;
+	margin: 0 auto;
+	&__header {
+		padding: 28px 40px;
+
+		background-color: #fff;
+	}
+	&__slogan {
+		display: block;
+		margin-bottom: 15px;
+	}
+	&__text {
+		margin: 0;
+
+		text-align: center;
+	}
+	&__legend {
+		display: block;
+		padding: 20px 0 15px;
+
+		font-size: 20px;
+		line-height: 20px;
+	}
+	&__legend--bottom {	
+		padding: 20px 0 0;
+
+		text-align: center;
+		color: rgba(255, 255, 255, 0.3);
+
+		background-color: $dark;
+	}
+	&__legend--top {
+		display: none;
+	}	
+	&__table {
+		width: 100%;
+
+		border-collapse: collapse;
+		background-color: #404040;
+	}
+	&__item--price {
+		background-color: #404040;
+	}
+	&__item--time {
+		background-color: #4e4e4e;
+	}
+	&__item--hair {
+		background-color: #353535;
+	}
+	&__item--likes {
+		background-color: #404040;
+	}
+	&__value {
+		width: 55%;
+		padding: 20px 0 20px 20px;
+
+		font-size: 40px;
+		line-height: 40px;
+		font-weight: 700;
+		color: #fff;
+		sup {
+			top: -0.35em;
+			left: -3px;
+		}
+	}
+	&__descr {
+		width: 45%;
+		padding: 20px 20px 20px 0;
+
+		font-size: 18px;
+		line-height: 18px;
+		text-align: right;
+		color: #f7f4f1;
+	}
+}
+
+// slider ----------------------------/
+.slick-dots {
+	@include reset-ul;
+
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 72px;
+	margin: 0 auto 12px;
+	li {
+		width: 8px;
+		height: 8px;
+		margin: 15px 23px 0 0;
+		&:nth-child(3n) {
+			margin: 15px 0 0;
+		}
+		button {
+			display: block;
+			width: 8px;
+			height: 8px;
+			padding: 0;
+			border: 2px solid #fff;
+			transform: rotate(45deg);
+
+			font-size: 0;
+
+			background-color: transparent;
+			outline: none;
+		}
+		&.slick-active {
+			button {
+				background-color: #fff;
+			}
+		}
+
+	}
+}
+.slick-arrow {
+	cursor: pointer;
+}
+
+// advantages ------------------------/
+.advantages {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 44px 0 0;
+	&__list {
+		@include reset-ul;
+	}
+	&__item {
+		padding: 130px 0 0;
+
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 50%;
+
+			transform: translateX(-50%);
+		}
+	}
+	&__item--fast {
+		&::before {
+			width: 95px;
+			height: 94px;
+
+			background-image: url(../images/icons/advantages-icon-1.svg);
+		}
+	}
+	&__item--cool {
+		&::before {
+			width: 95px;
+			height: 88px;
+
+			background-image: url(../images/icons/advantages-icon-2.svg);
+		}
+	}
+	&__item--expensive {
+		&::before {
+			width: 95px;
+			height: 91px;
+
+			background-image: url(../images/icons/advantages-icon-3.svg);
+		}
+	}
+	&__item-title {
+		margin: 0 0 20px;
+
+		color: #f7f4f1;
+	}
+	&__item-text {
+		margin: 0 0 15px;
+		padding: 0 39px;
+
+		color: #f7f4f1;
+		text-align: center;
+	}
+}
+
+// news ------------------------------/
+.news {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 32px 20px 28px;
+
+	background-color: $grey-bg;
+
+	box-shadow: 0 -2px 0px 0 $grey-bg;
+	position: relative;
+	z-index: 2;
+
+	&__title {
+		margin: 0 0 29px;
+	}
+	&__list {
+		@include reset-ul;
+	}
+	&__item {
+		display: flex;
+		align-items: flex-start;
+		padding: 0 0 12px;
+		margin: 0 0 14px;
+		border-bottom: 1px solid $dark-grey;
+
+		cursor: pointer;
+		&:nth-child(2) {
+			padding: 0;
+			border: none;
+		}
+		&:nth-child(3) {
+			display: none;
+		}
+		&:hover {
+			.news__date {
+				background-color: #826550;
+			}
+			.news__text {
+				color: #826550;
+				text-decoration: underline;
+			}
+		}
+		&:active {
+			.news__date {
+				background-color: #6a4d38;
+			}
+			.news__day,
+			.news__month {
+				opacity: 0.3;
+			}
+			.news__text {
+				color: #6a4d38;
+			}
+		}
+	}
+	&__date {
+		display: block;
+		min-width: 53px;
+		max-width: max-content;
+		margin: 10px 0 0;
+		padding: 6px 0 0;
+
+		line-height: 30px;
+		color: #fff;
+		text-align: center;
+
+		background-color: #000;
+	}
+	&__day {
+		display: block;
+
+		font-size: 30px;
+		font-weight: 700;
+	}
+	&__month {
+		display: block;
+
+		font-size: 16px;
+		line-height: 16px;
+	}
+	&__triangle-bg {
+		display: block;
+		margin: 0 -2px -2px -2px;
+	}
+	&__text {
+		margin: 0;
+		padding: 0 0 0 20px;
+
+		font-size: 18px;
+	}
+	&__btn {
+		display: block;
+		max-width: 320px;
+		margin: 0 auto;
+		border-color: #e5ddd5;
+	}
+}
+
+// reviews ---------------------------/
+.reviews {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 26px 0 0;
+	border-top: 1px solid $dark-grey;
+
+	background-color: $grey-bg;
+	&__title {
+		margin: 0 0 25px;
+	}
+	&__write {
+		display: none;
+	}
+	&__list {
+		@include reset-ul;
+	}
+	.reviews__item {
+		display: flex;
+		align-items: flex-start;
+		padding: 0 20px;
+	}
+	&__author-photo {
+		margin: 10px 20px 0 0;
+	}
+	&__img {
+		object-fit: cover;
+	}
+	&__name {
+		display: block;
+		margin: 0 0 7px;
+
+		font-size: 24px;
+		font-weight: 700;
+		color: #000;
+	}
+	&__text {
+		margin: 0;
+		padding: 0 20px 0 0;
+
+		font-size: 18px;
+		color: #000;
+	}
+	.slick-dots {
+		margin: 10px auto 18px;
+		button {
+			border-color: $dark;
+		}
+	}
+	li.slick-active {
+		button {
+			background-color: #000;
+		}
+	}
+}
+
+// footer ----------------------------/
+.footer {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 30px 0 24px;
+
+	position: relative;
+	
+	font-size: 18px;
+	color: #fff;
+	text-align: center;
+
+	background-color: #292929;
+	box-shadow: 0 -2px 0px 0 #292929;
+	&__info {
+		padding: 0 20px;
+	}
+	&__title {
+		margin: 0 0 9px;
+
+		font-size: 18px;
+		font-weight: 700;
+	}
+	&__address {
+		margin: 0 0 15px;
+	}
+	&__tel {
+		display: block;
+		max-width: 320px;
+		margin: 0 auto 26px;
+		border-color: $dark-border;
+
+		font-weight: 700;
+		color: #fff;
+		text-decoration: none;
+		&:hover,
+		&:active {
+			background-color: transparent;
+		}
+		&-label {
+			display: none;
+		}
+	}
+}
+
+// social-networks -------------------/
+.social-networks {
+	// max-width: 500px;
+	margin: 0 auto 26px;
+	&__slogan {
+		display: none;
+	}
+	&__list {
+		@include reset-ul;
+
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		max-width: 320px;
+		margin: 0 auto;
+	}
+	&__link {
+		display: block;
+		width: 106px;
+		height: 101px;
+		border: 1px solid $dark-border;
+
+		position: relative;
+
+		text-decoration: none;
+		color: #fff;
+		&::before {
+			content: '';
+
+			position: absolute;
+
+			top: 50%;
+			left: 50%;
+
+			transform: translate(-50%, -50%);
+
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		&:hover {
+			border-color: #545454;
+		}
+		&:active {
+			background-color: #252525;
+			&::before {
+				opacity: 0.3;
+			}
+		}
+	}
+	&__link--vk {
+		border-left: none;
+		&::before {
+			width: 23px;
+			height: 26px;
+
+			background-image: url(../images/icons/vk-icon-big.png);
+		}
+	}
+	&__link--fb {
+		&::before {
+			width: 18px;
+			height: 39px;
+
+			background-image: url(../images/icons/facebook-icon-big.png);
+		}
+	}
+	&__link--inst {
+		border-right: none;
+		&::before {
+			width: 36px;
+			height: 36px;
+
+			background-image: url(../images/icons/insta-icon-big.png);
+		}
+	}
+}
+
+// copy ------------------------------/
+.copy {
+	padding: 0 20px;
+	&__title {
+		display: block;
+		margin: 0 0 10px;
+
+		font-weight: 400;
+		text-align: center;
+	}
+	&__link {
+		display: block;
+		max-width: 320px;
+		margin: 0 auto;
+		
+		color: #fff;
+
+		border-color: $dark-border;
+		&:hover {
+			border-color: #545454;
+		}
+		&:active {
+			background-color: #252525;
+			.copy__link-inner {
+				opacity: 0.3;
+			}
+		}
+	}
+}
 
 
 

@@ -1,4 +1,9 @@
-@mixin reset-list {
+$dark: #242424;
+$grey-bg: #f8f5f2;
+$dark-grey: #e5ddd5;
+$dark-border: #3f3f3f;
+
+@mixin reset-ul {
 	margin: 0;
 	padding: 0;
 
