@@ -1,4 +1,10 @@
 @media (max-width: 767px) {
+	// header -------------------------/
+	.header {
+		&__triangle-bg {
+			display: none;
+		}
+	}
 	// nav ----------------------------/
 	.nav--closed {
 		.nav__item {
@@ -80,6 +86,23 @@
 			}
 		}
 	}
+
+	// page ---------------------------/
+	.page {
+		&__to-main-btn {
+			display: none;
+		}
+	}
+
+	// price-list ---------------------/
+	.price-list {
+		&__cell--num {
+			display: none;
+		}
+		&__cell--wash {
+			display: none;
+		}
+	}
 }
 
 
@@ -124,7 +147,6 @@
 		line-height: 40px;
 	}
 
-
 	// header -------------------------/
 	.header {
 		display: flex;
@@ -152,6 +174,15 @@
 		&__img {
 			width: 370px;
 			height: auto;
+		}
+	}
+	.logo--page {
+		min-height: auto;
+
+		background-size: cover;
+		background-position: center -72px;
+		.logo__img {
+			margin: 0 auto 43px;
 		}
 	}
 
@@ -368,7 +399,7 @@
 			text-align: left;
 		}
 		&__triangle-bg {
-			height: 68px;
+			height: 55px;
 		}
 	}
 
@@ -501,13 +532,15 @@
 
 	// footer -------------------------/
 	.footer {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: flex-start;
-		justify-content: space-between;
-		padding: 50px 64px 60px;
-
-		text-align: left;
+		&__inner {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			justify-content: space-between;
+			padding: 50px 64px 60px;
+	
+			text-align: left;
+		}
 		&__info {
 			width: 50%;
 			margin: 0 0 48px;
@@ -556,6 +589,123 @@
 			width: 100%;
 		}
 	}
+
+
+	// страница с работами ======================/
+	// header -------------------------/
+	.header {
+		&__triangle-bg {
+			height: 55px;
+		}
+	}
+
+	// page ---------------------------/
+	.page {
+		&__head {
+			position: relative;
+
+			box-shadow: 0 -2px 0 0 $grey-bg;
+		}
+		&__head-inner {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 56px 64px 38px;
+		}
+		&__title {
+			padding: 0;
+
+			font-size: 40px;
+			line-height: 40px;
+		}
+	}
+
+	// works -----------------------------/
+	.works {
+		&__inner {
+			padding: 0 64px 20px;
+		}
+		&__item {
+			display: flex;
+			margin: 0 0 40px;
+			border: 1px solid $dark-grey;
+		}
+		&__img {
+			width: 270px;
+		}
+		&__of-the-month {
+			top: 35px;
+			bottom: auto;
+		}
+		&__info {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			flex-grow: 1;
+			padding: 45px 50px 22px;
+			border: none;
+		}
+		&__triangle-bg {
+			height: 55px;
+		}
+	}
+
+	// price-list ---------------------/
+	.price-list {
+		&__inner {
+			padding: 0 64px 55px;
+		}
+		&__title {
+			margin: 0 0 50px;
+
+			text-align: left;
+		}
+		&__table {
+			max-width: 640px;
+			margin: 0 auto 10px;
+			border-collapse: collapse;
+		}
+		&__cell {
+			padding: 0 20px;
+			border: 1px solid #505050;
+
+			vertical-align: middle;
+		}
+		&__cell--num {
+			padding: 15px 17px;
+			opacity: 0.3;
+
+			text-align: center;
+		}
+		&__cell--style {
+			font-weight: 700;
+			span {
+				display: none;
+			}
+		}
+		&__cell--val {
+			text-align: left;
+		}
+		&__sale {
+			max-width: 640px;
+
+			font-size: 30px;
+			line-height: 30px;
+			text-transform: uppercase;
+			br {
+				display: none;
+			}
+			&-descr {
+				padding: 42px 0 42px 183px;
+
+				background-position: 26px 50%;
+				background-size: 71px 70px;
+			}
+		}
+		&__triangle-bg {
+			display: none;
+		}
+	}
 }
 
 
@@ -566,6 +716,14 @@
 		min-height: 649px;
 
 		background-size: cover;
+	}
+	.logo--page {
+		min-height: 320px;
+
+		background-position: center center;
+		.logo__img {
+			margin: 0 auto 34px;
+		}
 	}
 
 	// nav ----------------------------/
@@ -750,8 +908,10 @@
 
 	// footer -------------------------/
 	.footer {
-		justify-content: flex-start;
-		padding: 50px 120px 60px;
+		&__inner {
+			justify-content: flex-start;
+			padding: 50px 120px 60px;
+		}
 		&__info {
 			width: auto;
 			margin: 0 86px 0 0;
@@ -805,6 +965,119 @@
 			&::before {
 				width: 19px;
 				height: 19px;
+			}
+		}
+	}
+
+
+	// страница с работами ======================/
+	// header -------------------------/
+	.header {
+		&__triangle-bg {
+			height: 75px;
+		}
+	}
+
+	// page ---------------------------/
+	.page {
+		&__head-inner {
+			padding: 56px 120px 78px;
+		}
+	}
+
+	// works --------------------------/
+	.works {
+		&__inner {
+			padding: 0 120px 44px;
+		}
+		&__list {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0 0 0 -40px;
+		}
+		&__item {
+			width: 294px;
+			height: 545px;
+			flex-direction: column;
+			margin: 0 0 44px 39px;
+			&:first-child {
+				width: 100%;
+				height: auto;
+				flex-direction: row;
+				margin: 0 0 40px 39px;
+
+				position: relative;
+				.works__img {
+					width: 480px;
+					max-height: 480px;
+				}
+				.works__info {
+					padding: 128px 50px 17px;
+				}
+			}
+		}
+		&__photo {
+			position: static;
+		}
+		&__img {
+			width: 292px;
+			max-height: 292px;
+		}
+		&__of-the-month {
+			left: auto;
+			right: 0;
+			&::after {
+				right: auto;
+				left: -10px;
+				border: 25px solid #816550;
+				border-left: 10px solid transparent;
+			}
+		}
+		&__info {
+			padding: 32px 33px 22px;
+		}
+		&__review {
+			max-width: 300px;
+		}
+		&__icons-list {
+			max-width: 100%;
+			margin: 0px 0 0 -24px;
+		}
+		&__icon {
+			margin: 0 0 15px 24px;
+		}
+		&__triangle-bg {
+			display: none;
+		}
+	}
+
+	// price-list ---------------------/
+	.price-list {
+		padding: 75px 0 0;
+		&__inner {
+			padding: 0 120px 56px;
+		}
+		&__wrapper {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		&__table {
+			margin: 0;
+		}
+		&__sale {
+			width: 270px;
+			margin: 0 0 0 auto;
+			padding: 35px 58px 0;
+
+			font-size: 20px;
+			line-height: 27px;
+			text-transform: none;
+			text-align: center;
+			&-descr {
+				padding: 170px 0 0;
+
+				background-position: center 0;
+				background-size: 142px 139px;
 			}
 		}
 	}

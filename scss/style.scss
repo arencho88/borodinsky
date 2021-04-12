@@ -299,6 +299,8 @@
 			left: 50%;
 
 			transform: translateX(-50%);
+
+			background-repeat: no-repeat;
 		}
 	}
 	&__item--fast {
@@ -495,18 +497,20 @@
 
 // footer ----------------------------/
 .footer {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 30px 0 24px;
-
 	position: relative;
 	
-	font-size: 18px;
-	color: #fff;
-	text-align: center;
-
 	background-color: #292929;
 	box-shadow: 0 -2px 0px 0 #292929;
+	&__inner {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 30px 0 24px;
+	
+		
+		font-size: 18px;
+		color: #fff;
+		text-align: center;
+	}
 	&__info {
 		padding: 0 20px;
 	}
@@ -647,6 +651,198 @@
 
 
 
+// страница с работами =========================/
+.page {
+	&__head {
+		background-color: $grey-bg;
+	}
+	&__head-inner {
+		max-width: 1200px;
+		padding: 0 20px;
+		margin: 0 auto;
+	}
+	&__title {
+		margin: 0;
+		padding: 30px 0;
+
+		font-size: 30px;
+		line-height: 30px;
+		color: #000;
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
+
+// works -----------------------------/
+.works {
+	background-color: $grey-bg;
+
+	box-shadow: 0 -2px 0 0 $grey-bg;
+	&__inner {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px 13px;
+	}
+	&__list {
+		@include reset-ul;
+	}
+	&__item {
+		margin: 0 0 20px;
+	}
+	&__photo {
+		position: relative;
+	}
+	&__of-the-month {
+		padding: 12px 25px;
+
+		position: absolute;
+		left: 0;
+		bottom: 30px;
+
+		font-weight: 700;
+		color: #fff;
+		text-transform: uppercase;
+
+		background-color: #816550;
+		&::after {
+			content: '';
+
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			border: 25px solid #816550;
+			border-right: 10px solid transparent;
+		}
+	}
+	&__img {
+		display: block;
+		width: 280px;
+		max-height: 480px;
+		object-fit: cover;
+	}
+	&__info {
+		padding: 22px 35px 5px 22px;
+		border: 1px solid $dark-grey;
+	}
+	&__name {
+		margin: 0 0 16px;
+
+		font-size: 24px;
+		font-weight: 700;
+	}
+	&__review {
+		margin: 0 0 18px;
+
+		font-size: 18px;
+	}
+	&__icons-list {
+		@include reset-ul;
+
+		display: flex;
+		flex-wrap: wrap;
+		max-width: 269px;
+		margin: 0 0 0 -36px;
+	}
+	&__icon {
+		position: relative;
+		margin: 0 0 15px 36px;
+
+		font-size: 16px;
+		text-transform: uppercase;
+		&::before {
+			content: '';
+
+			position: absolute;
+			top: 50%;
+			left: 0;
+
+			transform: translateY(-50%);
+
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+	}
+	&__icon--haircut {
+		padding-left: 36px;
+		&::before {
+			width: 21px;
+			height: 20px;
+
+			background-image: url(../images/icons/scissors.svg);
+		}
+	}
+	&__icon--shaving {
+		padding-left: 44px;
+		&::before {
+			width: 23px;
+			height: 21px;
+
+			background-image: url(../images/icons/beard.svg);
+		}
+	}
+	&__icon--mustache {
+		padding-left: 58px;
+		&::before {
+			width: 45px;
+			height: 12px;
+
+			background-image: url(../images/icons/mustache.svg);
+		}
+	}
+}
+
+// price-list ------------------------/
+.price-list {
+	padding: 30px 0 0;
+
+	background-color: #353535;
+	box-shadow: 0 -2px 0 0 #353535;
+	&__inner {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px 18px;
+	}
+	&__title {
+		margin: 0 0 26px;
+
+		color: #fff;
+	}
+	&__table {
+		width: 100%;
+		max-width: 400px;
+		margin: 0 auto 28px;
+
+		color: #fff;
+	}
+	&__cell {
+		vertical-align: top;
+	}
+	&__cell--style {
+		padding: 0 0 18px;
+		span {
+			display: block;
+		}
+	}
+	&__cell--val {
+		text-align: right;
+	}
+	&__sale {
+		max-width: 280px;
+		margin: 0 auto;
+		border: 1px solid #505050;
+
+		color: #fff;
+		&-descr {
+			margin: 0;
+			padding: 20px 0 20px 113px;
+
+			background-image: url(../images/icons/clock.svg);
+			background-repeat: no-repeat;
+			background-position: 20px 50%;
+			background-size: 56px 56px;
+		}
+	}
+}
 
 
 

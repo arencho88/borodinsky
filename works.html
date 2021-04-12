@@ -4,17 +4,33 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="images/icons/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="css/style.min.css">
 	<title>Borodinski</title>
 </head>
 <body>
+	<!-- svg спрайт -->
+	<svg style="display: none"> 
+		<symbol id="icon-login" viewBox="0 0 16 16">
+			<polygon points="0 7 7.01 7 7.01 4.06 10.96 8.01 7.01 11.91 7.01 9.06 0 9.02 0 7"/>
+			<polygon points="7.01 0 7.01 2 14.03 2 14.03 13.99 7.01 13.99 7.01 16 16 16 16 0 7.01 0"/>
+		</symbol>
+		<symbol id="triangle-bg" viewBox="0 0 321 39.64" preserveAspectRatio="none">
+			<polygon points="0 39.64 321 39.64 321 0 160.47 34.68 0 0 0 39.64"/>
+		</symbol>
+	</svg>
+	<!--  -->
+
 	<header class="header">
-		<a class="logo">
+		<a class="logo logo--page" href="index.html">
 			<picture>
 				<source media="(min-width: 1200px)" srcset="images/mob-logo-desktop.svg">
 				<source media="(min-width: 768px)" srcset="images/mob-logo-tablet.svg">
-				<img class="logo__img" src="images/mob-logo.svg" srcset="" width="226" height="30" alt="логотип">
+				<img class="logo__img" src="images/mob-logo.svg" width="226" height="30" alt="логотип">
 			</picture>
+			<svg class="header__triangle-bg" width="100%" height="35" display="block" fill="#f8f5f2">
+				<use xlink:href="#triangle-bg"></use>
+			</svg>
 		</a>
 		<nav class="nav nav--closed nav--nojs">
 			<button class="nav__burger-btn" type="button">
@@ -51,9 +67,8 @@
 				<ul class="user-list">
 					<li class="user-list__item">
 						<a class="user-list__link" href="#">
-							<svg class="user-list__icon user-list__icon--login" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-								<polygon points="0 7 7.01 7 7.01 4.06 10.96 8.01 7.01 11.91 7.01 9.06 0 9.02 0 7" fill="#fff"/>
-								<polygon points="7.01 0 7.01 2 14.03 2 14.03 13.99 7.01 13.99 7.01 16 16 16 16 0 7.01 0" fill="#fff"/>
+							<svg class="user-list__icon user-list__icon--login" width="16" height="16" fill="#fff">
+								<use xlink:href="#icon-login"></use>
 							</svg>
 							Войти
 						</a>
@@ -65,215 +80,270 @@
 
 	<main class="page">
 		<div class="page__head">
-			<h1 class="page__title">Наши работы</h1>
-			<a class="page__to-main-btn btn" href="index.html">На главную</a>
+			<div class="page__head-inner">
+				<h1 class="page__title">Наши работы</h1>
+				<a class="page__to-main-btn btn" href="index.html">На главную</a>
+			</div>
 		</div>
 
 		<section class="works">
 			<h2 class="visually-hidden">Работы</h2>
-			<ul class="works__list">
-				<li class="works__item">
-					<img class="works__img" src="#" alt="стрижка">
-					<span class="works__of-the-month">
-						Работа месяца
-					</span>
-					<p class="works__name">
-						Лжепётр Мчиславский
-					</p>
-					<p class="works__review">
-						Где я только не стригся, 
-						но так как делаете это 
-						вы — не умеет никто другой! 
-						Еще раз спасибо и до скорого!
-					</p>
-					<ul class="works__icons-list">
-						<li class="works__icon works__icon--haircut">
-							Стрижка
-						</li>
-						<li class="works__icon works__icon--shaving">
-							Бритье
-						</li>
-						<li class="works__icon works__icon--mustache">
-							Усы
-						</li>
-					</ul>
-				</li>
-				<li class="works__item">
-					<img class="works__img" src="#" alt="стрижка">
-					<p class="works__name">
-						Саша Мальцев
-					</p>
-					<p class="works__review">
-						Попросил омолодить и омолодили! 
-						Кто теперь скажет, что мне 45? 
-					</p>
-					<ul class="works__icons-list">
-						<li class="works__icon works__icon--haircut">
-							Стрижка
-						</li>
-					</ul>
-				</li>
-				<li class="works__item">
-					<img class="works__img" src="#" alt="стрижка">
-					<p class="works__name">
-						Владимир Иваныч
-					</p>
-					<p class="works__review">
-						К зимнему сезону — готов!
-					</p>
-					<ul class="works__icons-list">
-						<li class="works__icon works__icon--shaving">
-							Борода
-						</li>
-						<li class="works__icon works__icon--mustache">
-							Усы
-						</li>
-					</ul>
-				</li>
-				<li class="works__item">
-					<img class="works__img" src="#" alt="стрижка">
-					<p class="works__name">
-						Винстон Синий
-					</p>
-					<p class="works__review">
-						Как только заростаю и волосы 
-						начинают мешать видеть — бегом в Бородинский!
-					</p>
-					<ul class="works__icons-list">
-						<li class="works__icon works__icon--haircut">
-							Стрижка
-						</li>
-					</ul>
-				</li>
-			</ul>
+			<div class="works__inner">
+				<ul class="works__list">
+					<li class="works__item">
+						<div class="works__photo">
+							<picture>
+								<source media="(min-width: 1200px)" srcset="images/content/photo-1-desktop.jpg">
+								<source media="(min-width: 768px)" srcset="images/content/photo-1-tablet.jpg">
+								<img class="works__img" src="images/content/photo-1-mobile.jpg" alt="стрижка">
+							</picture>
+							<span class="works__of-the-month">
+								Работа месяца
+							</span>
+						</div>
+						<div class="works__info">
+							<div class="works__info-top">
+								<p class="works__name">
+									Лжепётр Мчиславский
+								</p>
+								<p class="works__review">
+									Где я только не стригся, 
+									но так как делаете это 
+									вы — не умеет никто другой! 
+									Еще раз спасибо и до скорого!
+								</p>
+							</div>
+							<ul class="works__icons-list">
+								<li class="works__icon works__icon--haircut">
+									Стрижка
+								</li>
+								<li class="works__icon works__icon--shaving">
+									Бритье
+								</li>
+								<li class="works__icon works__icon--mustache">
+									Усы
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="works__item">
+						<picture>
+							<source media="(min-width: 1200px)" srcset="images/content/photo-2-desktop.jpg">
+							<source media="(min-width: 768px)" srcset="images/content/photo-2-tablet.jpg">
+							<img class="works__img" src="images/content/photo-2-mobile.jpg" alt="стрижка">
+						</picture>
+						<div class="works__info">
+							<div class="works__info-top">
+								<p class="works__name">
+									Саша Мальцев
+								</p>
+								<p class="works__review">
+									Попросил омолодить и омолодили! 
+									Кто теперь скажет, что мне 45? 
+								</p>
+							</div>
+							<ul class="works__icons-list">
+								<li class="works__icon works__icon--haircut">
+									Стрижка
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="works__item">
+						<picture>
+							<source media="(min-width: 1200px)" srcset="images/content/photo-3-desktop.jpg">
+							<source media="(min-width: 768px)" srcset="images/content/photo-3-tablet.jpg">
+							<img class="works__img" src="images/content/photo-3-mobile.jpg" alt="стрижка">
+						</picture>
+						<div class="works__info">
+							<div class="works__info-top">
+								<p class="works__name">
+									Владимир Иваныч
+								</p>
+								<p class="works__review">
+									К зимнему сезону — готов!
+								</p>
+							</div>
+							<ul class="works__icons-list">
+								<li class="works__icon works__icon--shaving">
+									Борода
+								</li>
+								<li class="works__icon works__icon--mustache">
+									Усы
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="works__item">
+						<picture>
+							<source media="(min-width: 1200px)" srcset="images/content/photo-4-desktop.jpg">
+							<source media="(min-width: 768px)" srcset="images/content/photo-4-tablet.jpg">
+							<img class="works__img" src="images/content/photo-4-mobile.jpg" alt="стрижка">
+						</picture>
+						<div class="works__info">
+							<div class="works__info-top">
+								<p class="works__name">
+									Винстон Синий
+								</p>
+								<p class="works__review">
+									Как только заростаю и волосы 
+									начинают мешать видеть — бегом в Бородинский!
+								</p>
+							</div>
+							<ul class="works__icons-list">
+								<li class="works__icon works__icon--haircut">
+									Стрижка
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<svg class="works__triangle-bg" width="100%" height="35" display="block" fill="#353535">
+				<use xlink:href="#triangle-bg"></use>
+			</svg>
 		</section>
 
 		<section class="price-list">
-			<h2 class="title">Прейскурант</h2>
-			<table class="price-list__table">
-				<tr class="price-list__row">
-					<td class="price-list__cell price-list__cell--num">
-						1
-					</td>
-					<td class="price-list__cell">
-						Классическая стрижка
-						<span>(с мытьем головы)</span>
-					</td>
-					<td class="price-list__cell price-list__cell--wash">
-						с мытьём головы
-					</td>
-					<td class="price-list__cell">
-						1 500 руб.
-					</td>
-				</tr>
-				<tr class="price-list__row">
-					<td class="price-list__cell price-list__cell--num">
-						2
-					</td>
-					<td class="price-list__cell">
-						Современный вариант
-						<span>(с мытьем головы)</span>
-					</td>
-					<td class="price-list__cell price-list__cell--wash">
-						с мытьём головы
-					</td>
-					<td class="price-list__cell">
-						1 500 руб.
-					</td>
-				</tr>
-				<tr class="price-list__row">
-					<td class="price-list__cell price-list__cell--num">
-						3
-					</td>
-					<td class="price-list__cell">
-						Индивидуальный подход
-						<span>(с мытьем головы)</span>
-					</td>
-					<td class="price-list__cell price-list__cell--wash">
-						с мытьём головы
-					</td>
-					<td class="price-list__cell">
-						2 000 руб.
-					</td>
-				</tr>
-				<tr class="price-list__row">
-					<td class="price-list__cell price-list__cell--num">
-						4
-					</td>
-					<td class="price-list__cell">
-						Бритьё бороды
-						<span>(без мытья)</span>
-					</td>
-					<td class="price-list__cell price-list__cell--wash">
-						без мытья
-					</td>
-					<td class="price-list__cell">
-						500 руб.
-					</td>
-				</tr>
-				<tr class="price-list__row">
-					<td class="price-list__cell price-list__cell--num">
-						5
-					</td>
-					<td class="price-list__cell">
-						Бритьё головы
-						<span>(без мытья)</span>
-					</td>
-					<td class="price-list__cell price-list__cell--wash">
-						с мытьём головы
-					</td>
-					<td class="price-list__cell">
-						1 000 руб.
-					</td>
-				</tr>
-			</table>
-			<div class="price-list__sale">
-				<img class="price-list__sale-img" src="#" alt="">
-				<p class="price-list__sale-descr">
-					C 10:00 до 14:00
-					<br>скидка 20%
-				</p>
+			<div class="price-list__inner">
+				<h2 class="price-list__title title">Прейскурант</h2>
+				<div class="price-list__wrapper">
+					<table class="price-list__table">
+						<tr class="price-list__row">
+							<td class="price-list__cell price-list__cell--num">
+								1
+							</td>
+							<td class="price-list__cell price-list__cell--style">
+								Классическая стрижка
+								<span>(с мытьем головы)</span>
+							</td>
+							<td class="price-list__cell price-list__cell--wash">
+								с мытьём головы
+							</td>
+							<td class="price-list__cell price-list__cell--val">
+								1 500 руб.
+							</td>
+						</tr>
+						<tr class="price-list__row">
+							<td class="price-list__cell price-list__cell--num">
+								2
+							</td>
+							<td class="price-list__cell price-list__cell--style">
+								Современный вариант
+								<span>(с мытьем головы)</span>
+							</td>
+							<td class="price-list__cell price-list__cell--wash">
+								с мытьём головы
+							</td>
+							<td class="price-list__cell price-list__cell--val">
+								1 500 руб.
+							</td>
+						</tr>
+						<tr class="price-list__row">
+							<td class="price-list__cell price-list__cell--num">
+								3
+							</td>
+							<td class="price-list__cell price-list__cell--style">
+								Индивидуальный
+								<br>подход
+								<span>(с мытьем головы)</span>
+							</td>
+							<td class="price-list__cell price-list__cell--wash">
+								с мытьём головы
+							</td>
+							<td class="price-list__cell price-list__cell--val">
+								2 000 руб.
+							</td>
+						</tr>
+						<tr class="price-list__row">
+							<td class="price-list__cell price-list__cell--num">
+								4
+							</td>
+							<td class="price-list__cell price-list__cell--style">
+								Бритьё бороды
+								<span>(без мытья)</span>
+							</td>
+							<td class="price-list__cell price-list__cell--wash">
+								без мытья
+							</td>
+							<td class="price-list__cell price-list__cell--val">
+								500 руб.
+							</td>
+						</tr>
+						<tr class="price-list__row">
+							<td class="price-list__cell price-list__cell--num">
+								5
+							</td>
+							<td class="price-list__cell price-list__cell--style">
+								Бритьё головы
+								<span>(без мытья)</span>
+							</td>
+							<td class="price-list__cell price-list__cell--wash">
+								с мытьём головы
+							</td>
+							<td class="price-list__cell price-list__cell--val">
+								1 000 руб.
+							</td>
+						</tr>
+					</table>
+					<div class="price-list__sale">
+						<p class="price-list__sale-descr">
+							C 10:00 до 14:00
+							<br>скидка 20%
+						</p>
+					</div>
+				</div>
 			</div>
+			<svg class="price-list__triangle-bg" width="100%" height="35" display="block" fill="#292929">
+				<use xlink:href="#triangle-bg"></use>
+			</svg>
 		</section>
 	</main>
 
 	<footer class="footer">
-		<div class="footer__info">
-			<h3 class="footer__title">
-				Барбершоп Бородинский
-			</h3>
-			<p class="footer__address">
-				г. Санкт-Петербург, ул. Большая Конюшенная 19/8
-			</p>
-			<a class="footer__tel" href="tel:78125556666">Тел.: +7 (812) 555-66-66</a>
-		</div>
-		<div class="footer__social-networks social-networks">
-			<b class="social-networks__slogan">
-				Давайте дружить!
-			</b>
-			<ul class="social-networks__list">
-				<li class="social-networks__item">
-					<a class="social-networks__link" href="#">
-						Вконтакте
-					</a>
-				</li>
-				<li class="social-networks__item">
-					<a class="social-networks__link" href="#">
-						Фэйсбук
-					</a>
-				</li>
-				<li class="social-networks__item">
-					<a class="social-networks__link" href="#">
-						Инстаграм
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="copy">
-			<b class="copy__title">
-				Разработано:
-			</b>
-			<a class="copy__link" href="#"></a>
+		<div class="footer__inner">
+			<div class="footer__info">
+				<h3 class="footer__title">
+					Барбершоп Бородинский
+				</h3>
+				<p class="footer__address">
+					г. Санкт-Петербург, ул. Большая Конюшенная 19/8
+				</p>
+				<a class="footer__tel btn" href="tel:78125556666">
+					<span class="footer__tel-label">Тел.:</span> 
+					<span class="footer__tel-num">+7 (812) 555-66-66</span>
+				</a>
+			</div>
+			<div class="footer__social-networks social-networks">
+				<b class="social-networks__slogan">
+					Давайте дружить!
+				</b>
+				<ul class="social-networks__list">
+					<li class="social-networks__item">
+						<a class="social-networks__link social-networks__link--vk" href="#">
+							<span class="visually-hidden">Вконтакте</span>
+						</a>
+					</li>
+					<li class="social-networks__item">
+						<a class="social-networks__link social-networks__link--fb" href="#">
+							<span class="visually-hidden">Фэйсбук</span>
+						</a>
+					</li>
+					<li class="social-networks__item">
+						<a class="social-networks__link social-networks__link--inst" href="#">
+							<span class="visually-hidden">Инстаграм</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__copy copy">
+				<b class="copy__title">
+					Разработано:
+				</b>
+				<a class="copy__link btn" href="#">
+					<span class="copy__link-inner">HTML ACADEMY</span>
+				</a>
+			</div>
 		</div>
 	</footer> 
 

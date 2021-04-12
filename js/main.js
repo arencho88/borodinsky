@@ -23,7 +23,7 @@ $(function(){
 		mobileFirst: true,
 		responsive: [
 			{
-			  breakpoint: 768,
+			  breakpoint: 767,
 			  settings: 'unslick'
 			}
 		]
