@@ -846,6 +846,229 @@
 
 
 
+// страница для записи =========================/
+.form {
+	background-color: $grey-bg;
+
+	position: relative;
+
+	box-shadow: 0 -2px 0 0 $grey-bg;
+	form {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+	&__fieldset--FIO {
+		margin: 0 0 26px;
+	}
+	&__fieldset--contacts {
+		margin: 0 0 26px;
+	}
+	&__inp {
+		width: 100%;
+		margin: 0 0 6px;
+		padding: 9px 20px;
+		border: 1px solid $dark-grey;
+
+		font-size: 18px;
+		line-height: 30px;
+		color: #000;
+
+		background-color: #fff;
+		&::placeholder {
+			font-size: 18px;
+			line-height: 30px;
+			color: #000;
+		}
+		&:focus,
+		&:active {
+			border-color: #999999;
+			outline: none;
+		}
+	}
+	&__inp--textarea {
+		height: 112px;
+		margin: 0 0 40px;
+		resize: none;
+	}
+	&__title {
+		margin: 0 0 37px;
+
+		text-align: center;
+		text-transform: uppercase;
+	}
+	&__wrapper {
+		max-width: max-content;
+		margin: 0 auto;
+		padding: 0 15px 14px;
+	}
+	&__labels-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__labels-wrapper--radio {
+		margin: 0 0 0 -34px;
+	}
+	&__label--radio {
+		min-width: 60px;
+		margin: 0 0 30px 34px;
+		padding: 0 0 90px;
+
+		text-align: center;
+
+		background-repeat: no-repeat;
+		background-position: 50% 105px;
+	}
+	&__radio-indicator {
+		display: block;
+		width: 50px;
+		height: 50px;
+		margin: 0 auto 15px;
+		border: 1px solid $dark-grey;
+		border-radius: 50%;
+
+		background-color: #fff;
+		cursor: pointer;
+		&:hover {
+			border: 1px solid #d5c9bd;
+		}
+		&:active {
+			box-shadow:inset 0 0 0 16px $dark-grey;
+		}
+	}
+	&__radio {
+		&:checked {
+			& + .form__radio-indicator {
+				box-shadow: inset 0 0 0 15px #ffffff, inset 0 0 0 16px $dark-grey;
+			}
+		}
+		&:focus {
+			& + .form__radio-indicator {
+				border: 1px solid #d5c9bd;
+			}
+		}
+		&:active {
+			& + .form__radio-indicator {
+				box-shadow:inset 0 0 0 16px $dark-grey;
+			}
+		}
+	}
+	&__label-text {
+		font-size: 18px;
+		line-height: 24px;
+	}
+	&__label--admiral {
+		background-image: url(../images/icons/form-beard-1.svg);
+	}
+	&__label--lumberjack {
+		background-image: url(../images/icons/form-beard-2.svg);
+	}
+	&__label--polar {
+		background-image: url(../images/icons/form-beard-3.svg);
+	}
+	&__label--boyar {
+		padding: 0 0 155px;
+
+		background-image: url(../images/icons/form-beard-4.svg);
+	}
+	&__label--sage {
+		padding: 0 0 155px;
+
+		background-image: url(../images/icons/form-beard-5.svg);
+	}
+	&__labels-wrapper--checkbox {
+		margin: 0 0 0 -65px;
+	}
+	&__label--checkbox {
+		width: 260px;
+		display: flex;
+		align-items: center;
+		margin: 0 0 20px 65px;
+
+		cursor: pointer;
+		&:active {
+			.form__checkbox-indicator {
+				background-color: $dark-grey;
+			}
+		}
+	}
+	&__checkbox-indicator {
+		display: block;
+		width: 36px;
+		height: 36px;
+		margin: 0 24px 0 0;
+		border: 1px solid $dark-grey;
+
+		position: relative;
+
+		background-color: #fff;
+		cursor: pointer;
+		&::after {
+			content: '';
+
+			width: 22px;
+			height: 16px;
+			transform: translate(-50%, -50%) scale(0);
+
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			background-image: url(../images/icons/form-checkbox.svg);
+			background-repeat: no-repeat;
+			background-position: center center;
+			transition: transform 0.1s;
+		}
+		&:hover {
+			border-color: #d5c9bd;
+		}
+		&:active {
+			background-color: $dark-grey;
+		}
+	}
+	&__checkbox {
+		&:checked {
+			& + .form__checkbox-indicator::after {
+				transform: translate(-50%, -50%) scale(1);
+			}
+		}
+		&:focus {
+			& + .form__checkbox-indicator {
+				border-color: #d5c9bd;
+			}
+		}
+		&:active {
+			& + .form__checkbox-indicator {
+				background-color: $dark-grey;
+			}
+		}
+	}
+	&__submit-btn {
+		display: block;
+		width: 100%;
+		margin: 27px auto 40px;
+
+		color: #fff;
+
+		background-color: #826550;
+		cursor: pointer;
+		&:hover {
+			background-color: #6a4d38;
+		}
+		&:active {
+			span {
+				opacity: 0.3;
+			}
+		}
+		&:focus {
+			background-color: #6a4d38;
+			outline: none;
+		}
+	}
+}
+
+
+
 
 
 

@@ -706,6 +706,106 @@
 			display: none;
 		}
 	}
+
+
+
+	// страница для записи ======================/
+	// page ---------------------------/
+	.page {
+		&__head-inner--form {
+			padding: 56px 64px 67px;
+		}
+	}
+
+	// form ---------------------------/
+	.form {
+		form {
+			padding: 0 64px 76px;
+		}
+		&__fieldset--FIO {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0 0 29px;
+		}
+		&__inp--FIO {
+			width: auto;
+			flex-grow: 1;
+			&:first-child {
+				border-left: none;
+				border-right: none;
+			}
+			&:nth-child(2) {
+				order: -1;
+			}
+		}
+		&__inp {
+			padding: 19px 26px;
+
+			font-size: 24px;
+			&::placeholder {
+				font-size: 24px;
+			}
+		}
+		&__fieldset--contacts {
+			margin: 0;
+		}
+		&__inp--contacts {
+			margin: 0 0 35px;
+		}
+		&__inp--textarea {
+			height: 211px;
+			margin: 0 0 54px;
+		}
+		&__title {
+			display: flex;
+			align-items: center;
+			margin: 0 0 45px;
+
+			font-size: 30px;
+			line-height: 30px;
+			&::before,
+			&::after {
+				content: '';
+
+				width: 50px;
+				height: 1px;
+				background-color: $dark-grey;
+				flex-shrink: 0;
+				flex-grow: 1;
+			}
+			&::before {
+				margin-right: 25px;
+			}
+			&::after {
+				margin-left: 25px;
+			}
+		}
+		&__title--checkbox {
+			margin: 0 0 68px;
+		}
+		&__wrapper {
+			padding: 0 15px 30px;
+		}
+		&__labels-wrapper--radio {
+			margin: 0 0 0 -66px;
+		}
+		&__label-text {
+			font-size: 24px;
+		}
+		&__label--radio {
+			margin: 0 0 30px 66px;
+		}
+		&__label--checkbox {
+			margin: 0 0 47px 65px;
+		}
+		&__submit-btn {
+			margin: 12px 0 0;
+			padding: 22px 30px;
+		}
+		&__triangle-bg {
+			display: none;
+		}
+	}
 }
 
 
@@ -1079,6 +1179,63 @@
 				background-position: center 0;
 				background-size: 142px 139px;
 			}
+		}
+	}
+
+
+
+	// страница с записью =======================/
+	// form ---------------------------/
+	.form {
+		form {
+			padding: 0 120px 76px;
+		}
+		&__fieldset--FIO {
+			margin: 0 0 29px -37px;
+		}
+		&__inp--FIO {
+			margin: 0 0 6px 37px;
+			&:first-child {
+				border: 1px solid #e5ddd5;
+				&:focus,
+				&:active {
+					border-color: #999999;
+				}
+			}
+		}
+		&__fieldset--contacts {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0 0 0 -37px;
+		}
+		&__inp--contacts {
+			width: auto;
+			flex-grow: 1;
+			margin: 0 0 35px 37px;
+		}
+		&__inp--textarea {
+			margin: 0 0 70px;
+		}
+		&__title {
+			margin: 0 0 50px;
+			&::before {
+				margin-right: 44px;
+			}
+			&::after {
+				margin-left: 47px;
+			}
+		}
+		&__title--checkbox {
+			margin: 0 0 68px;
+		}
+		&__labels-wrapper--radio {
+			margin: 0 0 0 -146px;
+		}
+		&__label--radio {
+			margin: 0 0 30px 146px;
+		}
+		&__submit-btn {
+			margin: 32px 0 0;
 		}
 	}
 }
